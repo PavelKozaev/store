@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Store.Web.Models;
-using System.Text;
 using System.IO;
+using System.Text;
 
 namespace Store.Web
 {

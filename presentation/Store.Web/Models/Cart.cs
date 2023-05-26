@@ -7,6 +7,7 @@
         public int TotalCount { get; set; }
 
         public decimal TotalPrice { get; set; }
+
         public Cart(int orderId)
         {
             OrderId = orderId;

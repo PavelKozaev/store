@@ -1,4 +1,7 @@
-﻿namespace Store.Memory
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Store.Memory
 {
     public class BookRepository : IBookRepository
     {

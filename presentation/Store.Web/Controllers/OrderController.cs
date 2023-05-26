@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using Store.Web.Models;
-using Microsoft.Extensions.Logging;
 
 namespace Store.Web.Controllers
 {
@@ -53,7 +53,7 @@ namespace Store.Web.Controllers
             };
         }
 
-        public IActionResult AddItem(int bookId, int count)
+        public IActionResult AddItem(int bookId, int count = 1)
         {
             (Order order, Cart cart) = GetOrCreateOrderAndCart();
 
@@ -63,7 +63,7 @@ namespace Store.Web.Controllers
 
             SaveOrderAndCart(order, cart);
 
-            return RedirectToAction("Index", "Book", new { bookId });
+            return RedirectToAction("Index", "Book", new { id = bookId });
         }
 
         [HttpPost]
@@ -75,7 +75,7 @@ namespace Store.Web.Controllers
 
             SaveOrderAndCart(order, cart);
 
-            return RedirectToAction("Index", "Book", new { bookId });
+            return RedirectToAction("Index", "Order");
         }
 
         private (Order order, Cart cart) GetOrCreateOrderAndCart()
@@ -104,15 +104,15 @@ namespace Store.Web.Controllers
             HttpContext.Session.Set(cart);
         }
 
-        public IActionResult RemoveItem(int id)
+        public IActionResult RemoveItem(int bookId)
         {
             (Order order, Cart cart) = GetOrCreateOrderAndCart();
 
-            order.RemoveItem(id);
+            order.RemoveItem(bookId);
 
             SaveOrderAndCart(order, cart);
 
-            return RedirectToAction("Index", "Book", new { id });
+            return RedirectToAction("Index", "Order");
         }
     }
 }
