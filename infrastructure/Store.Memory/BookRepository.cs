@@ -1,4 +1,7 @@
-﻿namespace Store.Memory
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Store.Memory
 {
     public class BookRepository : IBookRepository
     {
@@ -17,6 +20,15 @@
                      14.98m),
         };
 
+        public Book[] GetAllByIds(IEnumerable<int> bookIds)
+        {
+            var foundBooks = from book in books
+                             join bookId in bookIds on book.Id equals bookId
+                             select book;
+
+            return foundBooks.ToArray();
+        }
+
         public Book[] GetAllByIsbn(string isbn)
         {
             return books.Where(book => book.Isbn == isbn)
@@ -29,6 +41,7 @@
                                     || book.Title.Contains(query))
                         .ToArray();
         }
+
         public Book GetById(int id)
         {
             return books.Single(book => book.Id == id);

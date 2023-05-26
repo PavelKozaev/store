@@ -1,3 +1,5 @@
+using Xunit;
+
 namespace Store.Tests
 {
     public class BookTests

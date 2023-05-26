@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Store
 {
@@ -11,6 +7,9 @@ namespace Store
         Book[] GetAllByIsbn(string isbn);
 
         Book[] GetAllByTitleOrAuthor(string titleOrAuthor);
+
         Book GetById(int id);
+
+        Book[] GetAllByIds(IEnumerable<int> bookIds);
     }
 }
