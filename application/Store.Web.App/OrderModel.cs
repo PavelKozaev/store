@@ -1,4 +1,6 @@
-﻿namespace Store.Web.App
+﻿using System.Collections.Generic;
+
+namespace Store.Web.App
 {
     public class OrderModel
     {
@@ -9,6 +11,7 @@
         public int TotalCount { get; set; }
 
         public decimal TotalPrice { get; set; }
+
         public string CellPhone { get; set; }
 
         public string DeliveryDescription { get; set; }

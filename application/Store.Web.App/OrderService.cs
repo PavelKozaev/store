@@ -4,8 +4,6 @@ using Store.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Store.Web.App
 {
@@ -107,6 +105,8 @@ namespace Store.Web.App
                 orderItem.Count += count;
             else
                 order.Items.Add(book.Id, book.Price, count);
+
+            orderRepository.Update(order);
         }
 
         internal void UpdateSession(Order order)

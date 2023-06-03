@@ -1,11 +1,10 @@
-﻿using System.Linq;
-using System.Text.RegularExpressions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Store.Contractors;
-using Store.Messages;
 using Store.Web.App;
 using Store.Web.Contractors;
-using Store.Web.Models;
 
 namespace Store.Web.Controllers
 {
@@ -14,7 +13,7 @@ namespace Store.Web.Controllers
         private readonly OrderService orderService;
         private readonly IEnumerable<IDeliveryService> deliveryServices;
         private readonly IEnumerable<IPaymentService> paymentServices;
-        private readonly IEnumerable<IWebContractorService> webContractorServices;        
+        private readonly IEnumerable<IWebContractorService> webContractorServices;
 
         public OrderController(OrderService orderService,
                                IEnumerable<IDeliveryService> deliveryServices,
@@ -24,7 +23,7 @@ namespace Store.Web.Controllers
             this.orderService = orderService;
             this.deliveryServices = deliveryServices;
             this.paymentServices = paymentServices;
-            this.webContractorServices = webContractorServices;            
+            this.webContractorServices = webContractorServices;
         }
 
         [HttpGet]
@@ -35,7 +34,6 @@ namespace Store.Web.Controllers
 
             return View("Empty");
         }
-        
 
         [HttpPost]
         public IActionResult AddItem(int bookId, int count = 1)
@@ -97,9 +95,6 @@ namespace Store.Web.Controllers
             var returnUri = GetReturnUri(nameof(NextDelivery));
             var redirectUri = webContractorService.StartSession(form.Parameters, returnUri);
 
-
-
-
             return Redirect(redirectUri.ToString());
         }
 
@@ -115,7 +110,7 @@ namespace Store.Web.Controllers
                 builder.Port = Request.Host.Port.Value;
 
             return builder.Uri;
-        }        
+        }
 
         [HttpPost]
         public IActionResult NextDelivery(string serviceName, int step, Dictionary<string, string> values)

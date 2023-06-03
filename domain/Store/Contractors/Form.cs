@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Store.Contractors
 {
@@ -41,7 +39,6 @@ namespace Store.Contractors
             return new Form(serviceName, step, isFinal: true, parameters);
         }
 
-
         private Form(string serviceName,
                      int step,
                      bool isFinal,
@@ -49,7 +46,6 @@ namespace Store.Contractors
         {
             if (string.IsNullOrWhiteSpace(serviceName))
                 throw new ArgumentException(nameof(serviceName));
-
 
             if (step < 1)
                 throw new ArgumentOutOfRangeException(nameof(step));

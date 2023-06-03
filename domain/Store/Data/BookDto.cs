@@ -1,6 +1,6 @@
-﻿namespace Store.Web.App
+﻿namespace Store.Data
 {
-    public class BookModel
+    public class BookDto
     {
         public int Id { get; set; }
 

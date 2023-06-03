@@ -17,7 +17,6 @@ namespace Store.YandexKassa.Areas.YandexKassa.Controllers
             return View(model);
         }
 
-        // /YandexKassa/Home/Callback
         public IActionResult Callback(int orderId, string returnUri)
         {
             var model = new ExampleModel
