@@ -1,11 +1,8 @@
-﻿using Store.Contractors;
+﻿using Microsoft.AspNetCore.Http;
+using Store.Contractors;
 using Store.Web.Contractors;
 using System;
-using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Store.YandexKassa
 {
@@ -37,7 +34,6 @@ namespace Store.YandexKassa
 
             return Form.CreateLast(Name, step + 1, values);
         }
-
 
         public OrderPayment GetPayment(Form form)
         {

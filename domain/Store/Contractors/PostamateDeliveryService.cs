@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Store.Contractors
 {
@@ -46,7 +44,6 @@ namespace Store.Contractors
                        .AddParameter("orderId", order.Id.ToString())
                        .AddField(new SelectionField("Город", "city", "1", cities));
         }
-        
 
         public Form NextForm(int step, IReadOnlyDictionary<string, string> values)
         {
@@ -94,6 +91,6 @@ namespace Store.Contractors
             var description = $"Город: {cityName}\nПостамат: {postamateName}";
 
             return new OrderDelivery(Name, description, 150m, parameters);
-        }        
+        }
     }
 }

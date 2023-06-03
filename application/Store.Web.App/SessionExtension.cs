@@ -41,7 +41,6 @@ namespace Store.Web.App
                     var totalPrice = reader.ReadDecimal();
 
                     value = new Cart(orderId, totalCount, totalPrice);
-
                     return true;
                 }
             }
