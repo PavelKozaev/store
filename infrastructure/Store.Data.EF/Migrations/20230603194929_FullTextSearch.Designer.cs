@@ -11,7 +11,7 @@ using Store.Data.EF;
 namespace Store.Data.EF.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20230603125042_FullTextSearch")]
+    [Migration("20230603194929_FullTextSearch")]
     partial class FullTextSearch
     {
         /// <inheritdoc />
