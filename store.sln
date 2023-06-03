@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "application", "application"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Web.App", "application\Store.Web.App\Store.Web.App.csproj", "{12E6B8F7-8D3A-44F8-BDEB-3BC446A6A606}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Data.EF", "infrastructure\Store.Data.EF\Store.Data.EF.csproj", "{AC527242-01C4-436C-834B-1F48D1010056}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{12E6B8F7-8D3A-44F8-BDEB-3BC446A6A606}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12E6B8F7-8D3A-44F8-BDEB-3BC446A6A606}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12E6B8F7-8D3A-44F8-BDEB-3BC446A6A606}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC527242-01C4-436C-834B-1F48D1010056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC527242-01C4-436C-834B-1F48D1010056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC527242-01C4-436C-834B-1F48D1010056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC527242-01C4-436C-834B-1F48D1010056}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{BBEDAE1E-4EB8-45A2-B974-D77A56A31AE4} = {4351F3B6-ADC1-4A4E-B364-2AC635FD593C}
 		{BA60FACA-5E03-4B2C-90DF-3DE7F8A338CF} = {51AF1BB5-4DB8-42F0-9982-A6588ABC3ADE}
 		{12E6B8F7-8D3A-44F8-BDEB-3BC446A6A606} = {CB6D7399-9C25-4A16-9667-038C3D9B70C1}
+		{AC527242-01C4-436C-834B-1F48D1010056} = {ED98EE39-D241-433F-926F-BA241F9D1120}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E8BC71A9-1C67-484A-8050-686C3A2754EC}
