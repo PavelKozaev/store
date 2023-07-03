@@ -8,11 +8,15 @@ using Store.YandexKassa;
 using System.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
+using Store.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add(typeof(ExceptionFilter));
+});
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
